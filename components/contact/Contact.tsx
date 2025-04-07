@@ -68,7 +68,7 @@ const Contact = () => {
 
         <div className='overflow-hidden'>
           <p className='text'>
-            I' m always open to new opportunities
+            I&apos;m always open to new opportunities
             , collaborations, and exciting projects.
           </p>
         </div>
