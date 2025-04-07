@@ -34,7 +34,7 @@ const ProjectCard = ({className, order = "left", project, ref}: ProjectCardProps
     >
       {/* content */}
       <div
-        className={`content p-3 opacity-0 row-start-1 row-end-2 z-[1] place-content-center ${order === 'right' ?
+        className={`content p-3  row-start-1 row-end-2 z-[1] place-content-center ${order === 'right' ?
           'md:col-start-4 md:col-end-7' : 'md:col-start-1 md:col-end-4'}
           col-start-1 col-end-7 light:text-gray-300 md:light:text-text-color 
           `}

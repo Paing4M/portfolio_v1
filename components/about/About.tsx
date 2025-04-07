@@ -35,31 +35,23 @@ const About = () => {
       });
 
       tl
-        .fromTo('.header', {
+        .from('.header', {
             yPercent: 150,
             opacity: 0
-          }, {
-            yPercent: 0,
-            opacity: 1
           }
         )
-        .fromTo('.p', {
+
+        .from('.p', {
           yPercent: 150,
-          opacity: 0
-        }, {
-          yPercent: 0,
-          opacity: 1,
+          opacity: 0,
           stagger: 0.3,
           delay: .2
         }, '<')
-        .fromTo('.btn', {
+
+        .from('.btn', {
           y: 150,
           opacity: 0,
-          rotate: -10
-        }, {
-          y: 0,
-          rotate: 0,
-          opacity: 1,
+          rotate: -10,
           ease: 'elastic.out(1,0,3)',
           transformOrigin: 'left top',
           duration: 1,
@@ -104,18 +96,19 @@ const About = () => {
             <p className='text-2xl font-semibold mb-2 p'>“Code for fun. Fun for code.”</p>
           </div>
 
-          <div className='mt-4 p'>
-            <Heading className='!mb-2 ' size='sm' title={'What I Use : '}/>
-            <ul className='grid grid-cols-[repeat(2,minmax(120px,180px))] '>
-              {techList.map((tech, idx) => (
-                <li key={tech + idx} className='flex items-center gap-x-2 text-lg'>
-                  <TriangleIcon className='w-2 h-2 rotate-90'/>
-                  <span>{tech}</span>
-                </li>
-              ))}
+          <div className='overflow-hidden mt-4'>
+            <div className='p'>
+              <Heading className='!mb-2 ' size='sm' title={'What I Use : '}/>
+              <ul className='grid grid-cols-[repeat(2,minmax(120px,180px))] '>
+                {techList.map((tech, idx) => (
+                  <li key={tech + idx} className='flex items-center gap-x-2 text-lg'>
+                    <TriangleIcon className='w-2 h-2 rotate-90'/>
+                    <span>{tech}</span>
+                  </li>
+                ))}
 
-            </ul>
-
+              </ul>
+            </div>
           </div>
 
           <div className='flex items-center gap-x-3 mt-10'>

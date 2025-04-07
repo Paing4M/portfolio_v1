@@ -60,21 +60,16 @@ const Projects = () => {
         });
 
         tl
-          .fromTo(item.querySelector(".image"), {
-              scale: 0,
-              opacity: 0
-            },
+          .from(item.querySelector(".image"),
             {
-              scale: 1,
-              opacity: 1,
+              scale: 0,
+              opacity: 0,
               transformOrigin: "center"
             })
-          .fromTo(item.querySelector(".content"), {
+
+          .from(item.querySelector(".content"), {
             opacity: 0,
             yPercent: 20
-          }, {
-            opacity: 1,
-            yPercent: 0
           }, '<=.3');
       });
     }, component);

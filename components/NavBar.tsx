@@ -18,7 +18,6 @@ const Logo = () => {
 const NavBar = () => {
   const {activeSection, setActiveSection} = useActiveSectionContext()
 
-
   return (
     <nav
       className='flex items-center justify-between h-full px-4 md:px-6 my-auto '>

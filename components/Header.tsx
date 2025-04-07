@@ -1,13 +1,8 @@
 'use client'
 
 import NavBar from "@/components/NavBar";
-import useTheme from "@/hooks/useTheme";
-
 
 const Header = () => {
-  const {theme} = useTheme()
-
-  console.log({theme})
 
 
   return (

@@ -39,8 +39,6 @@ const MobileNav = () => {
       let isPlayed = false;
 
       const handleMenu = () => {
-        console.log('ha')
-
         if (isPlayed) {
           navTl.reverse();
           isPlayed = false;
@@ -49,8 +47,6 @@ const MobileNav = () => {
           isPlayed = true;
         }
       };
-
-      console.log(menuRef)
 
 
       menuRef?.current?.addEventListener("click", handleMenu);
