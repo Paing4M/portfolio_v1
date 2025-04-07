@@ -19,6 +19,7 @@ const Hero = () => {
 
 
   useLayoutEffect(() => {
+
     const ctx = gsap.context(() => {
       const textTl = gsap.timeline()
 
@@ -89,8 +90,8 @@ const Hero = () => {
 
 
       const handleMouseMove = (e: MouseEvent) => {
-        const x = (e.clientX / imgContainer?.current?.offsetWidth!) - 0.2
-        const y = (e.clientY / imgContainer?.current?.offsetHeight!) - 0.2
+        const x = (e.clientX / (imgContainer?.current?.offsetWidth ?? 0)) - 0.2
+        const y = (e.clientY / (imgContainer?.current?.offsetHeight ?? 0)) - 0.2
 
 
         images.forEach((img, idx) => {
