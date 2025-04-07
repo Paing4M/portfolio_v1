@@ -89,8 +89,8 @@ const Hero = () => {
 
 
       const handleMouseMove = (e: MouseEvent) => {
-        let x = (e.clientX / imgContainer?.current?.offsetWidth!) - 0.2
-        let y = (e.clientY / imgContainer?.current?.offsetHeight!) - 0.2
+        const x = (e.clientX / imgContainer?.current?.offsetWidth!) - 0.2
+        const y = (e.clientY / imgContainer?.current?.offsetHeight!) - 0.2
 
 
         images.forEach((img, idx) => {

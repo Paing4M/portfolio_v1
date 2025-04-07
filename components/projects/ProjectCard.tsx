@@ -8,17 +8,19 @@ import React from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+type ProjectType = {
+  name: string;
+  techs: string[];
+  github: string;
+  demo: string | null;
+  image: string;
+  desc?: string;
+};
+
 interface ProjectCardProps {
   className?: string;
   ref?: React.Ref<any>,
-  project: {
-    name: string;
-    techs: string[];
-    github: string;
-    demo: string | null;
-    image: string;
-    desc?: string;
-  };
+  project: ProjectType;
   order?: "left" | "right";
 }
 
