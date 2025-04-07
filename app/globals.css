@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant light (&:where([data-theme='light'], [data-theme='light'] *));
+
+/*:root {*/
+/*  --primary: #021323;*/
+/*  --secondary: #19376D;*/
+/*  --accent: #576CBC;*/
+/*  --text-color: #c8e4f0;*/
+/*  --btn-color: #e52020;*/
+/*  --btn-secondary: #fba518;*/
+/*  --btn-accent: #f9cb42;*/
+/*  --first: #946263;*/
+/*  --second: #676394;*/
+/*}*/
+
+html {
+  --primary: #021526;
+  --secondary: #03346E;
+  --accent: #6EACDA;
+  --text-color: #E2E2B6;
+  --btn-color: #F3C623;
+  --btn-secondary: #EB8317;
+  --btn-accent: #10375C;
+  /*--btn-color: #FF8383;*/
+  /*--btn-secondary: #FFF574;*/
+  /*--btn-accent: #A1D6CB;*/
+  --first: #946263;
+  --second: #676394;
+  --blur-primary: #8174A0;
+  --blur-secondary: #A888B5;
+  --blur-accent: #FFD2A0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/*:root[class='light'] {*/
+/*  --primary: #f8fafc;*/
+/*  --secondary: #d9eafd;*/
+/*  --accent: #bcccdc;*/
+/*  --text-color: #3f3742;*/
+/*  !*--btn-color: #211c84;*!*/
+/*  !*--btn-secondary: #4d55cc;*!*/
+/*  !*--btn-accent: #7a73d1;*!*/
+/*  --first: #fbe2e3;*/
+/*  --second-: #dbd7fb;*/
+/*}*/
+
+html[data-theme='light'] {
+  --primary: #FFF2F2;
+  --secondary: #A9B5DF;
+  --accent: #7886C7;
+  --text-color: #2D336B;
+  /*--btn-color: #211c84;*/
+  /*--btn-secondary: #4d55cc;*/
+  /*--btn-accent: #7a73d1;*/
+  --first: #fbe2e3;
+  --second-: #dbd7fb;
+  --blur-primary: #DCA06D;
+  --blur-secondary: #A55B4B;
+  --blur-accent: #DCA06D;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-text-color: var(--text-color);
+  --color-btn-color: var(--btn-color);
+  --color-btn-secondary: var(--btn-secondary);
+  --color-btn-accent: var(--btn-accent);
+  --color-first: var(--first);
+  --color-second: var(--second);
+  --color-blur-primary: var(--blur-primary);
+  --color-blur-secondary: var(--blur-secondary);
+  --color-blur-accent: var(--blur-accent);
 }
