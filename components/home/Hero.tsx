@@ -132,51 +132,51 @@ const Hero = () => {
 
           {/* solar system */}
           <div className='absolute w-[12rem] h-[12rem] md:w-[15em]  md:h-[15rem] left-[50%] top-[20%]'>
-            <Image priority width={100} height={100} src={'/hero/3.png'} alt={'earth'}
+            <Image unoptimized priority width={100} height={100} src={'/hero/3.png'} alt={'earth'}
                    className='w-fit h-full object-contain scale-0 opacity-0 img   z-[5]'/>
           </div>
 
           <div className='absolute w-[4em] h-[4rem]  z-[8] left-[10%] md:left-[10%] top-[50%]'>
-            <Image priority width={100} height={100} src={'/hero/4.png'} alt={'hero-4'}
+            <Image unoptimized priority width={100} height={100} src={'/hero/4.png'} alt={'hero-4'}
                    className='w-fit h-full object-contain scale-0 opacity-0 img  '/>
           </div>
 
           <div className='absolute w-[4rem] h-[4rem] z-[8] left-[15%] md:left-[30%] top-[2%] md:top-[10%]'>
-            <Image priority width={100} height={100} src={'/hero/2.png'} alt={'hero-2'}
+            <Image unoptimized priority width={100} height={100} src={'/hero/2.png'} alt={'hero-2'}
                    className='w-fit h-full object-contain scale-0 opacity-0 img  '/>
           </div>
 
           <div className='absolute w-[3rem] h-[3rem] z-[8] right-[18%] md:right-[30%] top-[2%] md:top-[10%]'>
-            <Image priority width={100} height={100} src={'/hero/1.png'} alt={'hero-1'}
+            <Image unoptimized priority width={100} height={100} src={'/hero/1.png'} alt={'hero-1'}
                    className='w-fit h-full object-contain scale-0 opacity-0 img  '/>
           </div>
 
 
           <div className='absolute w-[3rem] h-[3rem] z-[8] right-[25%] bottom-[25%]'>
-            <Image priority width={100} height={100} src={'/hero/5.png'} alt={'hero-5'}
+            <Image unoptimized priority width={100} height={100} src={'/hero/5.png'} alt={'hero-5'}
                    className='w-fit h-full object-contain scale-0 opacity-0 img  '/>
           </div>
 
           <div className='absolute w-[3rem] h-[3rem] z-[8] left-[20%] top-[30%]'>
-            <Image priority width={100} height={100} src={'/hero/6.png'} alt={'hero-6'}
+            <Image unoptimized priority width={100} height={100} src={'/hero/6.png'} alt={'hero-6'}
                    className='w-fit h-full object-contain scale-0 opacity-0 img  '/>
           </div>
 
           <div className='absolute w-[2rem] h-[2rem] z-[8] left-[25%] md:left-[30%] bottom-[10%] md:bottom-[30%]'>
-            <Image priority width={100} height={100} src={'/hero/7.png'} alt={'hero-7'}
+            <Image unoptimized priority width={100} height={100} src={'/hero/7.png'} alt={'hero-7'}
                    className='w-fit h-full object-contain scale-0 opacity-0 img  '/>
           </div>
 
           {/* main */}
           <div
             className='absolute bottom-[-8%] sm:bottom-[-20%] md:bottom-[40%] left-[50%] w-[20rem]  h-[20rem]  translate-x-[-50%] md:translate-y-[40%] z-[5]'>
-            <Image
-              src={'/hero/main.png'}
-              alt={'main-img'}
-              width={200}
-              height={200}
-              priority
-              className={'object-contain w-full h-full main-img z-[6] scale-0 opacity-0'}
+            <Image unoptimized
+                   src={'/hero/main.png'}
+                   alt={'main-img'}
+                   width={200}
+                   height={200}
+                   priority
+                   className={'object-contain w-full h-full main-img z-[6] scale-0 opacity-0'}
             />
           </div>
         </div>
