@@ -18,7 +18,6 @@ const Content = () => {
     <>
       <Hero/>
       <About/>
-      {/*<TechStack/>*/}
       <Projects/>
       <Contact/>
     </>

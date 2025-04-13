@@ -80,7 +80,8 @@ const Contact = () => {
         </div>
 
         <div className='mt-10'>
-          <Button rel="noopener noreferrer" className='btn' text={'Contact Me'} href={'mailto:paing1929@gmail.com'}
+          <Button rel="noopener noreferrer" className='btn' text={'Contact Me'}
+                  href={'mailto:paing1929@gmail.com?subject=Hello%20There'}
                   iconBtn/>
         </div>
       </div>
