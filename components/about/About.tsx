@@ -18,47 +18,45 @@ const About = () => {
   const ref = useSectionInView('About')
 
   useLayoutEffect(() => {
+    const isMobile = window.innerWidth <= 768;
+
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: '.aboutContainer',
           start: 'top 70%',
           end: 'bottom 80%',
-          // markers: true,
           toggleActions: 'play none none none',
-          // scrub: 4,
+          // markers: true,
         },
         defaults: {
-          ease: 'power3.out',
-          duration: .3,
+          ease: isMobile ? 'power2.out' : 'power3.out',
+          duration: isMobile ? 0.2 : 0.3,
         }
       });
 
       tl
         .from('.header', {
-            yPercent: 150,
-            opacity: 0
-          }
-        )
+          yPercent: isMobile ? 80 : 150,
+          opacity: 0,
+        })
 
         .from('.p', {
-          yPercent: 150,
+          yPercent: isMobile ? 80 : 150,
           opacity: 0,
-          stagger: 0.3,
-          delay: .2
+          stagger: isMobile ? 0.1 : 0.3,
+          delay: 0.2,
         }, '<')
 
         .from('.btn', {
-          y: 150,
+          y: isMobile ? 80 : 150,
           opacity: 0,
-          rotate: -10,
-          ease: 'elastic.out(1,0,3)',
+          rotate: isMobile ? 0 : -10,
+          ease: isMobile ? 'power2.out' : 'elastic.out(1, 0.3)',
           transformOrigin: 'left top',
-          duration: 1,
-          stagger: 0.3,
-        }, '<=1')
-
-
+          duration: isMobile ? 0.4 : 1,
+          stagger: isMobile ? 0.1 : 0.3,
+        }, '<=0.6')
     }, component);
 
     return () => ctx.revert();

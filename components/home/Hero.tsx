@@ -17,12 +17,11 @@ const Hero = () => {
 
   const ref = useSectionInView('Home')
 
-
   useLayoutEffect(() => {
+    const isMobile = window.innerWidth <= 768;
 
     const ctx = gsap.context(() => {
-
-      const textTl = gsap.timeline()
+      const textTl = gsap.timeline();
 
       textTl
         .fromTo('.name-animation', {
@@ -34,8 +33,8 @@ const Hero = () => {
           opacity: 1,
           skewX: 0,
           ease: 'power4.out',
-          duration: 1,
-          stagger: 0.02
+          duration: isMobile ? 0.6 : 1,
+          stagger: isMobile ? 0.01 : 0.02,
         })
 
         .fromTo(['.job-title', '.p'], {
@@ -44,9 +43,9 @@ const Hero = () => {
         }, {
           opacity: 1,
           yPercent: 0,
-          duration: 1,
+          duration: isMobile ? 0.6 : 1,
           ease: 'power4.out',
-        }, '-=1')
+        }, '-=0.6')
 
         .fromTo('.btn', {
           y: 100,
@@ -56,58 +55,56 @@ const Hero = () => {
           y: 0,
           opacity: 1,
           rotate: 0,
-          ease: 'elastic.out(1,0,3)',
+          ease: isMobile ? 'power2.out' : 'elastic.out(1, 0.3)',
           transformOrigin: 'left top',
-          duration: 1,
-        }, '<')
+          duration: isMobile ? 0.6 : 1,
+        }, '<');
 
-
-      const images = gsap.utils.toArray<HTMLImageElement>('.img')
+      const images = gsap.utils.toArray<HTMLImageElement>('.img');
 
       images.forEach(img => {
-
-        gsap
-          .to(img, {
-            opacity: 1,
-            scale: 1,
-            duration: 1,
-            ease: 'elastic.out(1, 0.3)',
-          })
-      })
+        gsap.to(img, {
+          opacity: 1,
+          scale: 1,
+          duration: isMobile ? 0.6 : 1,
+          ease: isMobile ? 'power2.out' : 'elastic.out(1, 0.3)',
+        });
+      });
 
       gsap.to('.main-img', {
         opacity: 1,
         scale: 1,
-        duration: 1,
+        duration: isMobile ? 0.6 : 1,
         ease: 'power4.inOut',
-      })
+      });
+      
+      if (!isMobile) {
+        const handleMouseMove = (e: MouseEvent) => {
+          const x = (e.clientX / (imgContainer?.current?.offsetWidth ?? 1)) - 0.2;
+          const y = (e.clientY / (imgContainer?.current?.offsetHeight ?? 1)) - 0.2;
 
+          images.forEach((img, idx) => {
+            const depth = (idx + 1) * 3;
+            const moveX = x * depth * 2;
+            const moveY = y * depth * 2;
 
-      const handleMouseMove = (e: MouseEvent) => {
-        const x = (e.clientX / (imgContainer?.current?.offsetWidth ?? 0)) - 0.2
-        const y = (e.clientY / (imgContainer?.current?.offsetHeight ?? 0)) - 0.2
+            gsap.to(img, {
+              x: moveX,
+              y: moveY,
+              duration: 0.3,
+              ease: 'power2.out',
+            });
+          });
+        };
 
-        images.forEach((img, idx) => {
-          const depth = (idx + 1) * 3;
-          const moveX = x * depth * 2;
-          const moveY = y * depth * 2;
+        component?.current?.addEventListener('mousemove', handleMouseMove);
 
-
-          gsap.to(img, {
-            x: moveX,
-            y: moveY,
-          })
-        })
+        return () => component?.current?.removeEventListener('mousemove', handleMouseMove);
       }
+    }, component);
 
-      component?.current?.addEventListener('mousemove', handleMouseMove)
-
-      return () => component?.current?.removeEventListener('mousemove', handleMouseMove)
-
-    }, component)
-
-    return () => ctx.revert()
-  }, [])
+    return () => ctx.revert();
+  }, []);
 
 
   const renderName = () => {
